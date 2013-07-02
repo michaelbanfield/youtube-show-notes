@@ -1,0 +1,7 @@
+<iframe width="1120" height="630" src="//www.youtube.com/embed/{{videoID}}?start={{start}}&autoplay=1" frameborder="0" allowfullscreen=""></iframe>
+p There are {{posts.length}} posts
+div#post-list
+  div(ng-repeat='post in posts')
+    div.input-prepend
+      button.btn(ng-click='changeStart(post.time)') @{{post.time}}
+      input(value='{{post.note}}', type='text', disabled) {{post.note}}

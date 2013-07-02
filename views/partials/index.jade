@@ -1,0 +1,17 @@
+input(type = "text", ng-show='setVideoView', ng-model="videoID", placeholder="Enter video ID here")
+a.btn.btn-primary.btn-large(ng-hide='setVideoView', href='/readNotes/{{videoID}}') Save Shownotes
+a.btn.btn-success.btn-large(ng-show='setVideoView', ng-click= 'setVideo()') Set video
+div.videoframe
+div.input-prepend(ng-hide='noteView || setVideoView')
+  span.add-on @time(seconds)
+  a.btn.btn-primary(ng-click='addNote()') Add Note
+div(ng-hide='setVideoView || !noteView')
+  div.input-prepend.input-append
+    span.add-on @{{currentTime}}
+    input.span2(ng-model='form.note', ng-focus='pauseVideo()', type='text')
+    button.btn.btn-success(ng-click='submitPost()') Submit Post
+
+div(ng-repeat='post in posts', ng-hide= 'setVideoView')
+  div.input-prepend
+    button.btn(ng-click='changeStart(post.time)') @{{post.time}}
+    input(value='{{post.note}}', type='text', disabled) {{post.note}}
