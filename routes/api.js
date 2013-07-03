@@ -3,9 +3,17 @@ var data = {
     "videoID": null,
     "posts": []
 };
+if (process.env.REDISTOGO_URL) {
+    var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+    var client = require("redis").createClient(rtg.port, rtg.hostname);
 
-var redis = require("redis"),
-    client = redis.createClient();
+    redis.auth(rtg.auth.split(":")[1]);
+
+} else {
+    var redis = require("redis"),
+        client = redis.createClient();
+}
+
 
 client.on("error", function (err) {
     console.log("Error " + err);
