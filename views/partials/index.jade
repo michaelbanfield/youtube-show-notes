@@ -1,11 +1,12 @@
 div.span8.offset2(ng-show='setVideoView')
   div.hero-unit#orange-hero
     div.row
-      div.span8
-        h1 Enter a Youtube URL
-        div.input-append
-          input.span4.offset2(type = "text", ng-model="videoID", placeholder="Enter video ID here")
-          button.btn.btn-success(ng-show='setVideoView', ng-click= 'setVideo()') Set video
+      <h1> Add timestamped notes </h1>
+      h2 to long, content dense YouTube videos
+      h2 and share them
+      div.input-append
+        input.span6(type = "text", ng-model="videoID", placeholder="Enter a YouTube URL")
+        button.btn.btn-success(ng-show='setVideoView', ng-click= 'setVideo()') Set video
 a.btn.btn-primary.btn-large(ng-hide='setVideoView', ng-click='setPath()') Save Shownotes
 div.videoframe
 div.input-prepend(ng-hide='noteView || setVideoView')

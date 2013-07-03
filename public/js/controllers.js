@@ -7,7 +7,7 @@
 
 function IndexCtrl($scope, $http, $location) {
     $scope.start = 0
-    $scope.videoID = "http://www.youtube.com/watch?v=fxU4WtlTiw4"
+    $scope.videoID = null
     $scope.setVideoView = true;
 
     $scope.data = {

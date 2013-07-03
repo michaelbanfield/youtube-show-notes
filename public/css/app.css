@@ -50,12 +50,27 @@ body {
     overflow: auto;
 }
 
+.input-prepend input {
+    width: 1000px;
+
+}
+
 #orange-hero {
     background-color: #f89406;
 }
 
 .hero-unit .row .span8 h1 {
     margin-bottom: 20px;
+}
+
+.span8 h1, h2{
+    text-align: center;
+}
+
+.input-append{
+    width: 700px ;
+    margin-left: auto ;
+    margin-right: auto ;
 }
 
 
