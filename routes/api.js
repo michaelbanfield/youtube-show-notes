@@ -74,6 +74,10 @@ exports.saveNotes = function(req, res) {
     res.json({
         result: key
     })
+    data = {
+        "videoID": null,
+        "posts": []
+    };
 }
 
 exports.getNotes = function(req,res) {

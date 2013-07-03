@@ -7,7 +7,7 @@
 
 function IndexCtrl($scope, $http, $location) {
     $scope.start = 0
-    $scope.videoID = "tGZbz_68EaM"
+    $scope.videoID = "http://www.youtube.com/watch?v=fxU4WtlTiw4"
     $scope.setVideoView = true;
 
     $scope.setVideo = function () {
@@ -18,7 +18,7 @@ function IndexCtrl($scope, $http, $location) {
     $scope.reloadVideo = function(autoplay) {
         autoplay = typeof autoplay !== 'undefined' ? autoplay : 0;
         $('.embedFrame').remove()
-        $('.videoframe').append('<embed id = "playerid" class="embedFrame"  width="1120" height="630" allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="playerid" style="" src="http://www.youtube.com/v/' + $scope.videoID + '?enablejsapi=1&version=3?&playerapiid=ytplayer&start=' + $scope.start + '&autoplay=' + autoplay + '" type="application/x-shockwave-flash">')
+        $('.videoframe').append('<embed id = "playerid" class="embedFrame"  width="1120" height="630" allowfullscreen="true" allowscriptaccess="always" quality="high" bgcolor="#000000" name="playerid" style="" src="http://www.youtube.com/v/' + $scope.videoID.split('v=')[1] + '?enablejsapi=1&version=3?&playerapiid=ytplayer&start=' + $scope.start + '&autoplay=' + autoplay + '" type="application/x-shockwave-flash">')
 
     }
 
@@ -91,7 +91,7 @@ function IndexCtrl($scope, $http, $location) {
     $scope.form = {};
     $scope.submitPost = function () {
         $scope.form.time = $scope.currentTime
-        $scope.form.videoID = $scope.videoID
+        $scope.form.videoID = $scope.videoID.split('v=')[1]
         $http.post('/api/post', $scope.form).
             success(function(data) {
                 $scope.loadPosts()
@@ -123,6 +123,7 @@ function ReadPostCtrl($scope, $http, $routeParams) {
 
 
 function ReadNotesCtrl($scope, $http, $routeParams) {
+    $scope.posts = null
     $http.get('/api/getnotes/' + $routeParams.id).
         success(function(data, status, headers, config) {
             $scope.posts = data.post.posts
