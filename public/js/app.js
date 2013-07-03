@@ -17,7 +17,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives'])
                 templateUrl: 'partials/readPost',
                 controller: ReadPostCtrl
             }).
-            when('/readNotes/:id', {
+            when('/read/:id', {
                 templateUrl: 'partials/readNotes',
                 controller: ReadNotesCtrl
             }).

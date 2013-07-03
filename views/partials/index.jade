@@ -1,5 +1,5 @@
 input(type = "text", ng-show='setVideoView', ng-model="videoID", placeholder="Enter video ID here")
-a.btn.btn-primary.btn-large(ng-hide='setVideoView', href='/readNotes/{{videoID}}') Save Shownotes
+a.btn.btn-primary.btn-large(ng-hide='setVideoView', ng-click='setPath()') Save Shownotes
 a.btn.btn-success.btn-large(ng-show='setVideoView', ng-click= 'setVideo()') Set video
 div.videoframe
 div.input-prepend(ng-hide='noteView || setVideoView')

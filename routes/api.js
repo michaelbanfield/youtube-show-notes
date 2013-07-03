@@ -1,22 +1,7 @@
 // initialize our faux database
 var data = {
-    "posts": [
-        {
-            "time": 50,
-            "note": "A note",
-            "videoID": "tGZbz_68EaM"
-        },
-        {
-            "time": 60,
-            "note": "Another note",
-            "videoID": "tGZbz_68EaM"
-        },
-        {
-            "time": 120,
-            "note": "Another note",
-            "videoID": "lolol"
-        }
-    ]
+    "videoID": null,
+    "posts": []
 };
 
 var redis = require("redis"),
@@ -76,12 +61,28 @@ exports.post = function (req, res) {
 
 // POST
 exports.addPost = function (req, res) {
+    data.videoID = req.body.videoID
     data.posts.push(req.body);
     res.json(req.body);
 };
 
 exports.saveNotes = function(req, res) {
-    client.set("testkey", "lol", redis.print)
+    var key = new Date().getTime().toString(12)
+    console.log(key)
+
+    client.set(key, JSON.stringify(data), redis.print)
+    res.json({
+        result: key
+    })
+}
+
+exports.getNotes = function(req,res) {
+    var id = req.params.id
+    client.get(id, function(err,reply) {
+        res.json({
+            post: JSON.parse(reply)
+        });
+    });
 }
 
 

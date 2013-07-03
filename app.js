@@ -59,6 +59,8 @@ app.get('/partials/:name', routes.partials);
 // JSON API
 
 app.get('/api/posts', api.posts);
+app.get('/api/savenotes', api.saveNotes)
+app.get('/api/getnotes/:id', api.getNotes)
 app.get('/api/notes/:id', api.notes)
 
 app.get('/api/post/:id', api.post);

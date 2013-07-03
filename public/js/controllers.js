@@ -22,6 +22,16 @@ function IndexCtrl($scope, $http, $location) {
 
     }
 
+    $scope.setPath = function() {
+        var key = null
+        $http.get('/api/savenotes/').
+            success(function(data) {
+                key = data.result
+                $location.url('/read/' + key)
+            });
+
+    }
+
 
 
 
@@ -113,10 +123,10 @@ function ReadPostCtrl($scope, $http, $routeParams) {
 
 
 function ReadNotesCtrl($scope, $http, $routeParams) {
-    $scope.videoID = $routeParams.id
-    $http.get('/api/notes/' + $routeParams.id).
+    $http.get('/api/getnotes/' + $routeParams.id).
         success(function(data, status, headers, config) {
-            $scope.posts = data.posts;
+            $scope.posts = data.post.posts
+            $scope.videoID = data.post.videoID;
 
         });
 
