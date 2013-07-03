@@ -50,4 +50,13 @@ body {
     overflow: auto;
 }
 
+#orange-hero {
+    background-color: #f89406;
+}
+
+.hero-unit .row .span8 h1 {
+    margin-bottom: 20px;
+}
+
+
 
