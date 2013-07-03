@@ -36,19 +36,6 @@ function IndexCtrl($scope, $http, $location) {
             });
 
     }
-
-
-
-
-    $scope.loadPosts = function () {
-        $http.get('/api/notes/' + $scope.videoID).
-            success(function(data, status, headers, config) {
-                $scope.posts = data.posts;
-            });
-
-    }
-
-   // $scope.loadPosts()
     $scope.currentTime = 0;
     $scope.noteView = false;
 
@@ -63,7 +50,6 @@ function IndexCtrl($scope, $http, $location) {
 
         var myPlayer = document.getElementById('playerid')
         myPlayer.pauseVideo()
-        //$scope.currentTime = myPlayer.getCurrentTime()
     }
 
     $scope.playVideo = function() {
@@ -97,35 +83,12 @@ function IndexCtrl($scope, $http, $location) {
     $scope.submitPost = function () {
         $scope.form.time = $scope.currentTime
         $scope.form.videoID = $scope.videoID.split('v=')[1]
-       // $http.post('/api/post', $scope.form).
-         //   success(function(data) {
-           //     $scope.loadPosts()
-             //   $scope.form = {};
-            //});
         $scope.data.posts.push($scope.form)
         $scope.data.videoID = $scope.form.videoID
         $scope.noteView = false;
         $scope.form = {}
         $scope.playVideo()
     };
-
-}
-
-function AddPostCtrl($scope, $http, $location) {
-    $scope.form = {};
-    $scope.submitPost = function () {
-        $http.post('/api/post', $scope.form).
-            success(function(data) {
-                $location.path('/');
-            });
-    };
-}
-
-function ReadPostCtrl($scope, $http, $routeParams) {
-    $http.get('/api/post/' + $routeParams.id).
-        success(function(data) {
-            $scope.post = data.post;
-        });
 
 }
 
@@ -143,41 +106,6 @@ function ReadNotesCtrl($scope, $http, $routeParams) {
         $scope.start = time
     }
 }
-
-
-function EditPostCtrl($scope, $http, $location, $routeParams) {
-    $scope.form = {};
-    $http.get('/api/post/' + $routeParams.id).
-        success(function(data) {
-            $scope.form = data.post;
-        });
-
-    $scope.editPost = function () {
-        $http.put('/api/post/' + $routeParams.id, $scope.form).
-            success(function(data) {
-                $location.url('/readPost/' + $routeParams.id);
-            });
-    };
-}
-
-function DeletePostCtrl($scope, $http, $location, $routeParams) {
-    $http.get('/api/post/' + $routeParams.id).
-        success(function(data) {
-            $scope.post = data.post;
-        });
-
-    $scope.deletePost = function () {
-        $http.delete('/api/post/' + $routeParams.id).
-            success(function(data) {
-                $location.url('/');
-            });
-    };
-
-    $scope.home = function () {
-        $location.url('/');
-    };
-}
-
 
 
 
