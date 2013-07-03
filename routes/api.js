@@ -19,6 +19,13 @@ var data = {
     ]
 };
 
+var redis = require("redis"),
+    client = redis.createClient();
+
+client.on("error", function (err) {
+    console.log("Error " + err);
+});
+
 // GET
 
 exports.posts = function (req, res) {
@@ -72,6 +79,12 @@ exports.addPost = function (req, res) {
     data.posts.push(req.body);
     res.json(req.body);
 };
+
+exports.saveNotes = function(req, res) {
+    client.set("testkey", "lol", redis.print)
+}
+
+
 
 // PUT
 exports.editPost = function (req, res) {

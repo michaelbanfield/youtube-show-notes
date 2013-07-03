@@ -9,6 +9,16 @@ var express = require('express'),
   http = require('http'),
   path = require('path');
 
+
+
+
+
+
+// if you'd like to select database 3, instead of 0 (default), call
+// client.select(3, function() { /* ... */ });
+
+
+
 var app = module.exports = express();
 
 
