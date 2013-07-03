@@ -10,6 +10,11 @@ function IndexCtrl($scope, $http, $location) {
     $scope.videoID = "http://www.youtube.com/watch?v=fxU4WtlTiw4"
     $scope.setVideoView = true;
 
+    $scope.data = {
+        videoID: null,
+        posts: []
+    }
+
     $scope.setVideo = function () {
         $scope.setVideoView = false;
         $scope.reloadVideo()
@@ -24,7 +29,7 @@ function IndexCtrl($scope, $http, $location) {
 
     $scope.setPath = function() {
         var key = null
-        $http.get('/api/savenotes/').
+        $http.post('/api/savenotes/', $scope.data).
             success(function(data) {
                 key = data.result
                 $location.url('/read/' + key)
@@ -43,7 +48,7 @@ function IndexCtrl($scope, $http, $location) {
 
     }
 
-    $scope.loadPosts()
+   // $scope.loadPosts()
     $scope.currentTime = 0;
     $scope.noteView = false;
 
@@ -92,12 +97,15 @@ function IndexCtrl($scope, $http, $location) {
     $scope.submitPost = function () {
         $scope.form.time = $scope.currentTime
         $scope.form.videoID = $scope.videoID.split('v=')[1]
-        $http.post('/api/post', $scope.form).
-            success(function(data) {
-                $scope.loadPosts()
-                $scope.form = {};
-            });
+       // $http.post('/api/post', $scope.form).
+         //   success(function(data) {
+           //     $scope.loadPosts()
+             //   $scope.form = {};
+            //});
+        $scope.data.posts.push($scope.form)
+        $scope.data.videoID = $scope.form.videoID
         $scope.noteView = false;
+        $scope.form = {}
         $scope.playVideo()
     };
 

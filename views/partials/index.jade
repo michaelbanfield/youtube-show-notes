@@ -11,7 +11,7 @@ div(ng-hide='setVideoView || !noteView')
     input.span2(ng-model='form.note', ng-focus='pauseVideo()', type='text')
     button.btn.btn-success(ng-click='submitPost()') Submit Post
 
-div(ng-repeat='post in posts', ng-hide= 'setVideoView')
+div(ng-repeat='post in data.posts', ng-hide= 'setVideoView')
   div.input-prepend
     button.btn(ng-click='changeStart(post.time)') @{{post.time}}
     input(value='{{post.note}}', type='text', disabled) {{post.note}}

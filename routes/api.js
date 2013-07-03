@@ -78,7 +78,7 @@ exports.saveNotes = function(req, res) {
     var key = new Date().getTime().toString(12)
     console.log(key)
 
-    client.set(key, JSON.stringify(data), redis.print)
+    client.set(key, JSON.stringify(req.body), redis.print)
     res.json({
         result: key
     })
