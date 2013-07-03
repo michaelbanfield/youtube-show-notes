@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a74c88d6-ea9e-4cd2-83af-86713629b7b9" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/partials/index.jade" afterPath="$PROJECT_DIR$/views/partials/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
     </list>
     <ignored path="my-project.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372817062982" ignored="false" />
-    <file path="/index.jade" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372833035971" ignored="false" />
+    <file path="/index.jade" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372835441746" ignored="false" />
     <file path="/app.js" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372825898647" ignored="false" />
     <file path="/layout.jade" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372822671861" ignored="false" />
     <file path="$PROJECT_DIR$/../../../rails_projects/sample_app/app/assets/stylesheets/custom.css.scss" changelist="a74c88d6-ea9e-4cd2-83af-86713629b7b9" time="1372736345693" ignored="false" />
@@ -134,19 +133,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.jade" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="23" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+            <state line="27" column="9" selection-start="678" selection-end="678" vertical-scroll-proportion="0.45918366">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.71153843">
+            <state line="32" column="71" selection-start="391" selection-end="391" vertical-scroll-proportion="-9.6">
               <folding />
             </state>
           </provider>
@@ -184,7 +183,6 @@
         <option value="$PROJECT_DIR$/views/partials/deletePost.jade" />
         <option value="$PROJECT_DIR$/views/partials/addPost.jade" />
         <option value="$PROJECT_DIR$/views/partials/readNotes.jade" />
-        <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/js/controllers.js" />
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/partials/index.jade" />
         <option value="$PROJECT_DIR$/public/css/app.css" />
+        <option value="$PROJECT_DIR$/views/index.jade" />
       </list>
     </option>
   </component>
@@ -660,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="23" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="27" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
@@ -676,7 +668,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="668" selection-end="668" vertical-scroll-proportion="0.71153843">
+        <state line="32" column="71" selection-start="391" selection-end="391" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="9" selection-start="678" selection-end="678" vertical-scroll-proportion="0.45918366">
           <folding />
         </state>
       </provider>
